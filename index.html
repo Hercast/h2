@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene embedded arjs>
+      <a-assets>
+        <a-asset-item
+          id="tree-obj"
+          src="https://raw.githubusercontent.com/Hercast/ar/master/hackers9.obj"
+        ></a-asset-item>
+        <a-asset-item
+          id="tree-mtl"
+          src="https://raw.githubusercontent.com/Hercast/ar/master/hackers9.mtl"
+        ></a-asset-item>
+      </a-assets>
+      <a-marker preset="hiro">
+        <a-entity
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          obj-model="obj: #tree-obj; mtl: #tree-mtl"
+        >
+        </a-entity>
+
+        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+
+        <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
+https://github.com/Hercast/ar/blob/f5a0050e4a5d411b019f6ef50daa406b19e648d8/hackers%20gtl.glb
